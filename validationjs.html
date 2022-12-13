@@ -1,0 +1,176 @@
+<?php 
+//cookie
+if(isset($_COOKIE['username'])){
+    $username = $_COOKIE['username'];
+    $password = $_COOKIE['password'];
+    $checked = "checked";
+}
+else{
+    $username = "";
+    $password = "";
+    $checked = "";
+}
+?>
+<!DOCTYPE html> 
+<html> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Login Page </title>
+<style> 
+body{
+    border-style:dotted;
+    border-radius: 5%;
+    border-bottom-color: rgb(94, 96, 122);
+    border-top-color :rgb(83, 31, 70);
+    padding : 3%;
+    background: linear-gradient(-490deg, #b97be0, #f0a5c2, #90cfe8, #8bdcc9, #7672dd);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    font-size: 20px;
+    }
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+    :root{
+        --pink:#e84393;
+    } 
+    *{
+        margin:0; padding:0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        outline: none; border:none;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: .2s linear;
+    }
+    html{
+        font-size: 62.5%;
+        scroll-behavior: smooth;
+        scroll-padding-top: 6rem;
+        overflow-x: hidden;
+    }
+    button{ 
+       background-color: #98014a36; 
+       width: 100%;
+        color: rgb(83, 61, 110); 
+        font-size: 20px;
+        padding: 10px; 
+        margin: 10px 0px; 
+        border: none; 
+        cursor: pointer; 
+         } 
+ form { 
+        border: 3px solid #beabd200; 
+    } 
+ input[type=text], input[type=password] { 
+        width: 100%; 
+        margin: 8px 0;
+        padding: 12px 20px; 
+        display: inline-block; 
+        border: 2px solid rgba(169, 126, 196, 0); 
+        box-sizing: border-box; 
+    }
+ button:hover { 
+        opacity: 0.7; 
+    } 
+  .cancelbtn { 
+        width: auto; 
+        padding: 10px 18px;
+        margin: 10px 5px;
+    }  
+ .container { 
+        padding: 25px; 
+        background-color: rgba(173, 216, 230, 0);
+    } 
+    .btn{
+        display: inline-block;
+        margin-top: 1rem;
+        border-radius: 5rem;
+        background:#333;
+        color:#fff;
+        padding:.9rem 3.5rem;
+        cursor: pointer;
+        font-size: 1.7rem;
+    }
+    .btn:hover{
+        background:var(--pink);
+    }
+</style> 
+</head>  
+<body>  
+    <script>  
+        function validateform(form){ 
+          alert("Here") 
+        var userpattern = /[0-9]/;
+        var name=form.username.value;  
+        var password = form.password.value;  
+        if (name==null || name==""){  
+          alert("Name cant be blank");  
+          
+        }
+        if(userpatten.test(name)){
+            alert("Name can't have a number");
+          
+        }
+        if(password.length<6){  
+          alert("Password must be at least 6 characters long.");  
+            
+          }  
+        }  
+        function validateform1(form){  
+        var userpattern = /[0-9]/;
+        var name=document.myform1.username1.value;  
+        var password=document.myform1.password1.value;  
+        var confpassword=document.myform1.confpassword1.value;  
+        if (name==null || name==""){  
+          alert("Name can't be blank");  
+          
+        }else if(password.length<6){  
+          alert("Password must be at least 6 characters long.");  
+         
+          }else if(userpattern.test(name)) {
+        alert("Name can't have a number");
+          }
+          
+          if(password!=confpassword){
+            alert("Password and confirm password must be same");
+            return false;
+          }
+        }  
+        </script>  
+    <center> <h1 style = "color: rgb(16, 117, 154)">LOGIN</h1> </center> 
+    <form name = "myform" method="post" onSubmit="return validateform(this)">
+        <div class="container"> 
+            <label style = "color: rgb(16, 117, 154)">Username : </label> 
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <label style = "color: rgb(16, 117, 154)">Password : </label> 
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <button type="submit" class="btn">Login</button> 
+            <input type="checkbox" checked="checked"> Remember me 
+            <button type="reset" class="btn"> Cancel</button> 
+             <a href="#">Forgot password? </a> 
+            <a href = "shop.html"> <button class="btn">Back</button></a>
+        </div> 
+    </form>   
+   <center> <h1 style = "color: rgb(16, 117, 154)">REGISTER</h1> </center> 
+   <form name = "myform1" onSubmit="return validateform1(this)">
+    <div class="container"> 
+        <label style = "color: rgb(16, 117, 154)">Username : </label> 
+        <input type="text" placeholder="Enter Username" name="username1" required>
+        <label style ="color: rgb(16, 117, 154)">Password : </label> 
+        <input type="password" placeholder="Enter Password" name="password1" required>
+        
+        <label style = "color: rgb(16, 117, 154)"> Confirm Password : </label> 
+        <input type="password" placeholder="Confirm Password" name="confpassword1" required>
+        <button type="submit"class="btn">Register</button>
+        <button type="reset" class="btn">Cancel</button> 
+    </div> 
+</form>   
+
+</body>   
+</html>

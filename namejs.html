@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="Shop.css">
+</head>
+<body>
+    <style>
+        input[type=text]{ 
+        width: 100%; 
+        margin: 8px 0;
+        padding: 12px 20px; 
+        display: inline-block; 
+        border: 2px solid rgba(169, 126, 196, 0); 
+        box-sizing: border-box; 
+    }
+    </style>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="#" class="logo">Bridgerton<span>.</span></a>
+        <div class="icons">
+            <a href="#" class="fas fa-home"></a>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="validationjs.html" class="fas fa-user"></a>
+            <a href="1.html" class="fas fa-calculator"></a>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Bridgerton</h3>
+            <span>Regency Period Drama </span>
+            <p>The ton are abuzz with the latest gossip, and so it is my honor to impart to you: Bridgerton news is back.
+                I do hope you have saved a bottle of ratafia for this momentous occasion. The author have been reliably informed that
+                that the Bridgerton website has a new section.
+            </p>
+            <input type="text" id="myText" value="Enter Your Name"><br/>
+            <button onclick="myFunction()" class="btn">Move to next page</button>
+        </div>    
+    </section>
+<script>
+function myFunction() {
+var x = document.getElementById("myText").value;
+localStorage.setItem('name', x);
+location.replace("redir.html");
+}
+</script>
+</body>
+</html>

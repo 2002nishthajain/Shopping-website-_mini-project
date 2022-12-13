@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction() {
+const name = localStorage.getItem('name');
+document.getElementById("text1").innerHTML = name;
+}
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="Shop.css">
+</head>
+<body onload="myFunction()">
+  <header>
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+    <a href="#" class="logo">Bridgerton<span>.</span></a>
+    <div class="icons">
+        <a href="#" class="fas fa-home"></a>
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="validationjs.html" class="fas fa-user"></a>
+        <a href="1.html" class="fas fa-calculator"></a>
+    </div>
+</header>
+<section class="home" id="home">
+    <div class="content">
+        <h3>Bridgerton</h3>
+        <p><span id = "text1"></span>,<br/>
+            The author has been informed reliably informed that you are to be chosen
+            as the diamond of the first water.
+        </p>
+        <button onclick="myFunction()" class="btn">Move to next page</button>
+    </div>    
+</section>
+</body>
+</html>
